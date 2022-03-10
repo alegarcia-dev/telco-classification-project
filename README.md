@@ -1,4 +1,4 @@
-# Reducing Customer Churn at Telco [Telco Logo](TelcoCo.png)
+# Reducing Customer Churn at Telco ![Telco Logo](TelcoCo.png)
 
 This repository contains all deliverables for the Telco classification project including additional files used 
 in the process of producing the final deliverables.
