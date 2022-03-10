@@ -1,4 +1,4 @@
-# Reducing Customer Churn at Telco <img src="TelcoCo.png" alt="drawing" width="50"/>
+# Reducing Customer Churn at Telco <img src="TelcoCo.png" alt="drawing" width="70"/>
 
 This repository contains all deliverables for the Telco classification project including additional files used 
 in the process of producing the final deliverables.
@@ -12,10 +12,10 @@ final results, and a recommended course of action.
 final prediction model.
 - notebooks:
     - detailed_report.ipynb: A reproducible notebook outlining the full project with technical details included.
-    - acquire.ipynb: A detailed overview of the data acquisition process.
-    - prepare.ipynb: A detailed overview of the data preparation process.
-    - explore.ipynb: A detailed overview of the exploratory analysis process along with key takeaways.
-    - model.ipynb: A detailed overview of the modeling process including key takeaways.
+    - acquire.ipynb: A more detailed and thorough overview of the data acquisition process.
+    - prepare.ipynb: A more detailed and thorough overview of the data preparation process.
+    - explore.ipynb: A more detailed and thorough overview of the exploratory analysis process along with key takeaways.
+    - model.ipynb: A more detailed and thorough overview of the modeling process including key takeaways.
 - util:
     - acquire.py: Contains functions used for acquiring the Telco customer data.
     - prepare.py: Contains functions used for preparing and tidying the Telco customer data.
@@ -81,7 +81,20 @@ Initial analysis of the data was conducted by answering these questions:
 
 ## Outline of Project Plan
 
-*in progress*
+- ### Data Acquisition
+
+The Telco customer data used in this project is acquired from the telco_churn database hosted at data.codeup.com. After 
+running the project notebook for the first time this dataset is saved to a local telco.csv file, for quicker access, which 
+is not included in this repository.
+
+- The acquire.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the acquisition 
+process was performed and details on how to reproduce the work from scratch.
+
+- The detailed_report.ipynb notebook located in the notebooks directory provides a briefer description of how to acquire the
+data along with the code needed to do so.
+
+- The acquire.py file located in the util directory provides all the functions used by the final report notebook with documentation
+describing how to use each function.
 
 ## Key Takeaways and Recommendations
 
