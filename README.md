@@ -1,4 +1,4 @@
-# Reducing Customer Churn at Telco
+# Reducing Customer Churn at Telco [Telco Logo](TelcoCo.png)
 
 This repository contains all deliverables for the Telco classification project including additional files used 
 in the process of producing the final deliverables.
@@ -29,6 +29,9 @@ final prediction model.
 2. [Project Description](#project-description)
 3. [Initial Questions](#initial-questions)
 4. [Data Dictionary](#data-dictionary)
+5. [Instructions for Reproducing the Results](#instructions-for-reproducing-the-results)
+6. [Outline of Project Plan](#outline-of-project-plan)
+7. [Key Takeaways and Recommendations](#key-takeaways-and-recommendations)
 
 ## Project Goals
 
@@ -71,3 +74,15 @@ Initial analysis of the data was conducted by answering these questions:
 | internet_service_type | Type of internet service a customer has (DSL, Fiber optic, or None) |
 | gender                | A customer's gender (Female or Male) |
 | senior_citizen        | Whether or not a customer is a senior citizen, 0 for is not a senior citizen or 1 for is a senior citizen |
+
+## Instructions for Reproducing the Results
+
+*pending*
+
+## Outline of Project Plan
+
+*in progress*
+
+## Key Takeaways and Recommendations
+
+*in progress*
