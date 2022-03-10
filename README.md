@@ -25,10 +25,10 @@ final prediction model.
 
 ## Table of Contents
 
-[Project Goals](#project-goals)
-[Project Description](#project-description)
-[Initial Questions](#initial-questions)
-[Data Dictionary](#data-dictionary)
+1. [Project Goals](#project-goals)
+2. [Project Description](#project-description)
+3. [Initial Questions](#initial-questions)
+4. [Data Dictionary](#data-dictionary)
 
 ## Project Goals
 
