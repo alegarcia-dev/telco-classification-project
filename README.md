@@ -82,26 +82,66 @@ Initial analysis of the data was conducted by answering these questions:
 *pending*
 
 ## Outline of Project Plan
-
-- ### Data Acquisition
+---
+### Data Acquisition
 
 The Telco customer data used in this project is acquired from the telco_churn database hosted at data.codeup.com. After 
 running the project notebook for the first time this dataset is saved to a local telco.csv file, for quicker access, which 
 is not included in this repository.
 
-    - The acquire.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the acquisition 
+- The acquire.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the acquisition 
 process was performed and details on how to reproduce the work from scratch.
 
-    - The detailed_report.ipynb notebook located in the notebooks directory provides a briefer description of how to acquire the
+- The detailed_report.ipynb notebook located in the notebooks directory provides a briefer description of how to acquire the
 data along with the code needed to do so.
 
-    - The acquire.py file located in the util directory provides all the functions used by the final report notebook with documentation
+- The acquire.py file located in the util directory provides all the functions used by the final report notebook with documentation
 describing how to use each function.
 
-- ### Data Preparation
+**Steps Taken:**
+1. Create and test function to acquire our data from either the database or .csv file if it exists.
+2. Add the acquire function to acquire.py.
 
-something here
+### Data Preparation
 
+**Preparing Data**:
+
+    To prepare the dataset for exploratory analysis and modeling we needed to remove redundant columns and deal with missing or otherwise
+unusual values. Missing values could be values that are absent in one form or another and unusual values could be values that do not match
+the form that the majority of data in a single column follow. Redundant columns would be columns that essentially represent the same data
+as another column.
+
+- The prepare.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the preparation
+process was performed with details on how to reproduce the work from scratch.
+
+- The detailed_report.ipynb notebook located in the notebooks directory provides a section with a briefer description of the data
+preparation process with focus on the key takeaways.
+
+- The prepare.py file located in the util directory provides all the functions used by the final report notebook with documentation
+describing how to use each function.
+
+**Missing Values**:
+
+    A small number of rows with missing values in the total_charges column were identified (11 out of 7043). It was decided that these
+rows could be removed from the dataset without affecting our final results.
+
+**Data Split**:
+
+    The data was split into train, validate and test datasets with the proportions 56%, 24% and 20% respectively. All exploratory analysis
+is performed on the train dataset.
+
+**Steps Taken:**
+1. Identify missing values in the dataset.
+2. Remove rows with missing values.
+3. Identify redundant or otherwise useless columns.
+4. Remove redundant and useless columns.
+5. Encode categorical features into numeric columns.
+6. Create a function for each step of the preparation process.
+7. Gather all preparation functions into a single data prep function.
+8. Create a function for splitting our data.
+---
 ## Key Takeaways and Recommendations
 
 *in progress*
+
+[Back to top](#reducing-customer-churn-at-telco-img-src"telcocopng"-alt"drawing"-width"70")
