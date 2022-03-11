@@ -1,4 +1,5 @@
-# Reducing Customer Churn at Telco <img src="TelcoCo.png" alt="drawing" width="70"/>
+# Reducing Customer Churn at Telco
+<img src="TelcoCo.png" alt="drawing" width="70"/>
 
 This repository contains all deliverables for the Telco classification project including additional files used 
 in the process of producing the final deliverables.
@@ -91,9 +92,6 @@ is not included in this repository.
 - The acquire.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the acquisition 
 process was performed and details on how to reproduce the work from scratch.
 
-- The detailed_report.ipynb notebook located in the notebooks directory provides a briefer description of how to acquire the
-data along with the code needed to do so.
-
 - The acquire.py file located in the util directory provides all the functions used by the final report notebook with documentation
 describing how to use each function.
 
@@ -112,9 +110,6 @@ as another column.
 
 - The prepare.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the preparation
 process was performed with details on how to reproduce the work from scratch.
-
-- The detailed_report.ipynb notebook located in the notebooks directory provides a section with a briefer description of the data
-preparation process with focus on the key takeaways.
 
 - The prepare.py file located in the util directory provides all the functions used by the final report notebook with documentation
 describing how to use each function.
@@ -138,9 +133,33 @@ is performed on the train dataset.
 6. Create a function for each step of the preparation process.
 7. Gather all preparation functions into a single data prep function.
 8. Create a function for splitting our data.
+
+### Exploratory Analysis
+
+Once the data was prepared we began analyzing the data to identify potential drivers of churn. This was done through univariate, 
+bivariate, and multivariate analysis in order to identify which features were most likely driving customer churn and how these
+features relate to each other.
+
+After identifying the most likely drivers of churn statistical tests were performed to determine if our conclusion were valid.
+
+- The explore.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the exploration
+process was performed with details on how to reproduce the work from scratch.
+
+- The explore.py file located in the util directory provides all the functions used by the final report notebook with documentation
+describing how to use each function.
+
+**Steps Taken:**
+1. Conduct univariate analysis on all features identified as potential drivers in our initial questions.
+2. Conduct bivariate analysis on all features identified as potential drivers in our initial questions.
+3. Summarize key takeaways and formulate additional questions to answer.
+4. Conduct multivariate analysis on all the features identified as most likely drivers of churn.
+5. Summarize key takeaways.
+6. Conduct statistical tests on all features identified as drivers of churn.
+7. Summarize key takeaways.
+
 ---
 ## Key Takeaways and Recommendations
 
 *in progress*
 
-[Back to top](#reducing-customer-churn-at-telco-img-src"telcocopng"-alt"drawing"-width"70")
+[Back to top](#reducing-customer-churn-at-telco)
