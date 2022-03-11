@@ -31,6 +31,8 @@ final prediction model.
 4. [Data Dictionary](#data-dictionary)
 5. [Instructions for Reproducing the Results](#instructions-for-reproducing-the-results)
 6. [Outline of Project Plan](#outline-of-project-plan)
+    1. [Data Acquisition](#data-acquisition)
+    2. [Data Preparation](#data-preparation)
 7. [Key Takeaways and Recommendations](#key-takeaways-and-recommendations)
 
 ## Project Goals
@@ -87,14 +89,18 @@ The Telco customer data used in this project is acquired from the telco_churn da
 running the project notebook for the first time this dataset is saved to a local telco.csv file, for quicker access, which 
 is not included in this repository.
 
-- The acquire.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the acquisition 
+    - The acquire.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the acquisition 
 process was performed and details on how to reproduce the work from scratch.
 
-- The detailed_report.ipynb notebook located in the notebooks directory provides a briefer description of how to acquire the
+    - The detailed_report.ipynb notebook located in the notebooks directory provides a briefer description of how to acquire the
 data along with the code needed to do so.
 
-- The acquire.py file located in the util directory provides all the functions used by the final report notebook with documentation
+    - The acquire.py file located in the util directory provides all the functions used by the final report notebook with documentation
 describing how to use each function.
+
+- ### Data Preparation
+
+something here
 
 ## Key Takeaways and Recommendations
 
