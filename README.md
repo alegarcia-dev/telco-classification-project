@@ -11,11 +11,10 @@ final results, and a recommended course of action.
 - predictions.csv: A list of customers predicted as either likely to churn or not likely to churn produced by our
 final prediction model.
 - notebooks:
-    - detailed_report.ipynb: A reproducible notebook outlining the full project with technical details included.
-    - acquire.ipynb: A more detailed and thorough overview of the data acquisition process.
-    - prepare.ipynb: A more detailed and thorough overview of the data preparation process.
-    - explore.ipynb: A more detailed and thorough overview of the exploratory analysis process along with key takeaways.
-    - model.ipynb: A more detailed and thorough overview of the modeling process including key takeaways.
+    - acquire.ipynb: A detailed and thorough overview of the data acquisition process.
+    - prepare.ipynb: A detailed and thorough overview of the data preparation process.
+    - explore.ipynb: A detailed and thorough overview of the exploratory analysis process along with key takeaways.
+    - model.ipynb: A detailed and thorough overview of the modeling process including key takeaways.
 - util:
     - acquire.py: Contains functions used for acquiring the Telco customer data.
     - prepare.py: Contains functions used for preparing and tidying the Telco customer data.
@@ -106,7 +105,7 @@ describing how to use each function.
 
 **Preparing Data**:
 
-    To prepare the dataset for exploratory analysis and modeling we needed to remove redundant columns and deal with missing or otherwise
+To prepare the dataset for exploratory analysis and modeling we needed to remove redundant columns and deal with missing or otherwise
 unusual values. Missing values could be values that are absent in one form or another and unusual values could be values that do not match
 the form that the majority of data in a single column follow. Redundant columns would be columns that essentially represent the same data
 as another column.
@@ -122,12 +121,12 @@ describing how to use each function.
 
 **Missing Values**:
 
-    A small number of rows with missing values in the total_charges column were identified (11 out of 7043). It was decided that these
+A small number of rows with missing values in the total_charges column were identified (11 out of 7043). It was decided that these
 rows could be removed from the dataset without affecting our final results.
 
 **Data Split**:
 
-    The data was split into train, validate and test datasets with the proportions 56%, 24% and 20% respectively. All exploratory analysis
+The data was split into train, validate and test datasets with the proportions 56%, 24% and 20% respectively. All exploratory analysis
 is performed on the train dataset.
 
 **Steps Taken:**
