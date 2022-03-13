@@ -133,7 +133,6 @@ def _drop_useless_columns(df: pd.core.frame.DataFrame) -> pd.core.frame.DataFram
     '''
 
     cols_to_drop = [
-        'customer_id',
         'contract_type_id',
         'internet_service_type_id',
         'payment_type_id'

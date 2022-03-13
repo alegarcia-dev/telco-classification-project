@@ -15,7 +15,7 @@
 #       visualize_churn_rate_versus_contract_type(df)
 #       visualize_churn_rate_versus_payment_type(df)
 #       visualize_monthly_charges_versus_tenure(df)
-#       statistical_tests()
+#       perform_two_sample_ttest_on_monthly_charges(df)
 #
 ####################
 
@@ -101,11 +101,70 @@ def visualize_monthly_charges_versus_tenure(df: pd.core.frame.DataFrame) -> None
     '''
 
     churn_customers = df[df.churn == 'Yes']
-    print(f'tenure less than or equal to 24, percentage of churn pop.: {(churn_customers.tenure <= 24).mean():.2%}')
+    print(f'Tenure less than or equal to 24, percentage of churn pop.: {(churn_customers.tenure <= 24).mean():.2%}')
 
     sns.histplot(data = churn_customers[churn_customers.tenure <= 24], x = 'monthly_charges')
     plt.title('Customers with 2 years or less of tenure that have churned')
     plt.show()
 
-def statistical_tests():
-    pass
+def perform_two_sample_ttest_on_monthly_charges(df: pd.core.frame.DataFrame) -> None:
+    '''
+        Conducts a two sample t-test on the dataset comparing the monthly
+        charges of the two samples. The results are printed to the console.
+
+        Parameters
+        ----------
+        df: DataFrame
+            The expected argument is a pandas dataframe containing the
+            Telco customer dataset.
+    '''
+
+    churn_customers = df[df.churn == 'Yes']
+    not_churn_customers = df[df.churn == 'No']
+
+    two_sample_ttest(churn_customers.monthly_charges, not_churn_customers.monthly_charges, alternative = 'greater')
+
+def perform_two_sample_ttest_on_tenure(df: pd.core.frame.DataFrame) -> None:
+    '''
+        Conducts a two sample t-test on the dataset comparing the tenure
+        of the two samples. The results are printed to the console.
+
+        Parameters
+        ----------
+        df: DataFrame
+            The expected argument is a pandas dataframe containing the
+            Telco customer dataset.
+    '''
+
+    churn_customers = df[df.churn == 'Yes']
+    not_churn_customers = df[df.churn == 'No']
+
+    two_sample_ttest(churn_customers.tenure, not_churn_customers.tenure, alternative = 'less')
+
+def perform_chi2_test_on_contract_type(df: pd.core.frame.DataFrame) -> None:
+    '''
+        Conducts a chi2 test between the contract type and churn features
+        of the dataframe. The results are printed to the console.
+
+        Parameters
+        ----------
+        df: DataFrame
+            The expected argument is a pandas dataframe containing the
+            Telco customer dataset.
+    '''
+
+    chi2_test(df.churn, df.contract_type)
+
+def perform_chi2_test_on_payment_type(df: pd.core.frame.DataFrame) -> None:
+    '''
+        Conducts a chi2 test between the payment type and churn features
+        of the dataframe. The results are printed to the console.
+
+        Parameters
+        ----------
+        df: DataFrame
+            The expected argument is a pandas dataframe containing the
+            Telco customer dataset.
+    '''
+
+    chi2_test(df.churn, df.payment_type)

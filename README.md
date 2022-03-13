@@ -33,6 +33,8 @@ final prediction model.
 6. [Outline of Project Plan](#outline-of-project-plan)
     1. [Data Acquisition](#data-acquisition)
     2. [Data Preparation](#data-preparation)
+    3. [Exploratory Analysis](#exploratory-analysis)
+    4. [Modeling](#modeling)
 7. [Key Takeaways and Recommendations](#key-takeaways-and-recommendations)
 
 ## Project Goals
@@ -79,7 +81,31 @@ Initial analysis of the data was conducted by answering these questions:
 
 ## Instructions for Reproducing the Results
 
-*pending*
+1. Clone this repository using the following command
+```
+git clone git@github.com:alegarcia-dev/telco-classification-project.git
+```
+2. You will need to have pandas, numpy, matplotlib, seaborn, and sklearn installed.
+3. You will also need login credentials for the MySQL database hosted at data.codeup.com.
+4. Save your login credentials in a env.py file in the following form:
+```python
+username = 'your_username'
+password = 'your_password'
+hostname = 'data.codeup.com'
+```
+5. Ensure that the util directory along with its contents (acquire.py, prepare.py, explore.py, and model.py) are in the same working directory
+as Telco_Final_Report.ipynb.
+6. Open the Telco_Final_Report.ipynb notebook in Jupyter Notebooks.
+7. The notebook uses a random seed to ensure all results are reproducible. Simply execute the code blocks in order to reproduce the results.
+
+For details on the underlying code being executed refer to the python files in the util directory. For detailed breakdowns of each phase
+of the pipeline refer to the notebooks in the notebooks directory. These notebooks are split into each individual phase of the pipeline:
+- acquire.ipynb
+- prepare.ipynb
+- explore.ipynb
+- model.ipynb
+
+These notebooks are designed to run on their own without any outside files.
 
 ## Outline of Project Plan
 ---
@@ -157,9 +183,41 @@ describing how to use each function.
 6. Conduct statistical tests on all features identified as drivers of churn.
 7. Summarize key takeaways.
 
+### Modeling
+
+With our most likely drivers of churn identified we moved forward with creating some machine learning models that would allow us
+to identify customers that are likely to churn so that action can be taken to retain these customers. Three different models were
+created to predict customer churn and the performance of these were compared primarily by there recall scores and secondarily by
+there accuracy scores.
+
+We chose to focus on recall because the cost of signing new customers is greater than the cost of retaining an existing. As such
+the cost of falsely identifying a customer as not likely to churn is greater than the cost of falsely identifying a customer as
+likely to churn. This aligns with the goal of optimizing for recall which is to reduce missed positive cases.
+
+- The model.ipynb notebook located in the notebooks directory provides a very thorough walkthrough of how the modeling process
+was performed with details on how to reproduce the work from scratch.
+
+- The model.py file located in the util directory provides all the functions used by the final report notebook with documentation
+describing how to use each function.
+
+**Steps Taken:**
+1. Establish a baseline model.
+2. Measure the performance of the baseline model.
+3. Split our datasets into X and y where X is the features identified in exploration and y is the target variable churn.
+4. Create a decision tree model.
+5. Create a random forest model.
+6. Create a k nearest neighors model.
+7. Test the performance of all models and the baseline on the validate dataset.
+8. Choose the top performer.
+
 ---
 ## Key Takeaways and Recommendations
 
-*in progress*
+The decision tree model was determined to be the best performing model. For more information refer to Telco_Final_Report.ipynb. For a detailed
+breakdown of the results refer to model.ipynb in the notebooks directory.
+
+Here I will provide my recommended course of action formulated with the help of the decision tree model breakdown:
+- Customers identified as likely to churn who have less than 17 months of tenure should be offered a reduced monthly rate to bring their monthly charges below 68 dollars until they reach 17 months of tenure. If their monthly bill is already below 68 dollars they can be offered an incentive to utilize a different form of payment.
+- Customers identified as likely to churn who have more than 17 months of tenure should be offered a discounted rate to reduce their monthly charges by a small percentage.
 
 [Back to top](#reducing-customer-churn-at-telco)

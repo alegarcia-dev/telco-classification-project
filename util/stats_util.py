@@ -39,13 +39,13 @@ def chi2_test(data_for_category1, data_for_category2, alpha=.05):
     expected = expected.round(1)
     
     # output
-    print('Observed\n')
-    print(observed.values)
-    print('---\nExpected\n')
-    print(expected)
-    print('---\n')
-    print(f'chi^2 = {chi2:.4f}')
-    print(f'p     = {p:.4f}')
+    # print('Observed\n')
+    # print(observed.values)
+    # print('---\nExpected\n')
+    # print(expected)
+    # print('---\n')
+    # print(f'chi^2 = {chi2:.4f}')
+    # print(f'p     = {p:.4f}')
     
     # evaluate the hypothesis against the established alpha value
     evaluate_hypothesis(p, alpha)
@@ -138,19 +138,19 @@ def two_sample_ttest(
 
     # Are the samples large enough to assume normal distribution?
     normal_dist = central_limit_theorem_test(sample1, sample2, n_clt = n_clt)
-    print(f'Samples contain more than {n_clt} observations: {normal_dist}')
+    # print(f'Samples contain more than {n_clt} observations: {normal_dist}')
 
     # if our samples are normally distributed use a parametric test
     if normal_dist:
         # Do the subgroups have equal variance?
         equal_var = equal_var_test(sample1, sample2, alpha = alpha)
-        print(f'Samples have equal variances: {equal_var}')
-        print(f'Using parametric test...')
+        # print(f'Samples have equal variances: {equal_var}')
+        # print(f'Using parametric test...')
         f, p = stats.ttest_ind(sample1, sample2, equal_var = equal_var, alternative = alternative)
 
     # otherwise use a non-parametric test
     else:
-        print(f'Using non-parametric test...')
+        # print(f'Using non-parametric test...')
         f, p = stats.mannwhitneyu(sample1, sample2, alternative = alternative)
 
     evaluate_hypothesis(p, alpha)
