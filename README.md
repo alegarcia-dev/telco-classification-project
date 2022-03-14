@@ -77,7 +77,7 @@ Initial analysis of the data was conducted by answering these questions:
 | phone_service         | Whether or not a customer has phone service, "Yes" for does have phone service or "No" for does not have phone service. |
 | internet_service_type | Type of internet service a customer has (DSL, Fiber optic, or None) |
 | gender                | A customer's gender (Female or Male) |
-| senior_citizen        | Whether or not a customer is a senior citizen, 0 for is not a senior citizen or 1 for is a senior citizen |
+| tech_support          | Whether or not a customer pays for the tech support service |
 
 ## Instructions for Reproducing the Results
 
