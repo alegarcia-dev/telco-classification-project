@@ -63,7 +63,7 @@ Initial analysis of the data was conducted by answering these questions:
 - Is there a difference in churn frequency between customers with phone service and those without?
 - Is there a relationship between customers who churn and internet service type?
 - Is there a relationship between gender and customers who churn?
-- Are senior citizens more likely to churn?
+- Do customers with tech support churn less frequently?
 
 ## Data Dictionary
 

@@ -15,7 +15,11 @@
 #       visualize_churn_rate_versus_contract_type(df)
 #       visualize_churn_rate_versus_payment_type(df)
 #       visualize_monthly_charges_versus_tenure(df)
+#       visualize_churn_rate_versus_tenure(df)
 #       perform_two_sample_ttest_on_monthly_charges(df)
+#       perform_two_sample_ttest_on_tenure(df)
+#       perform_chi2_test_on_contract_type(df)
+#       perform_chi2_test_on_tech_support(df)
 #
 ####################
 
@@ -63,11 +67,10 @@ def visualize_churn_rate_versus_contract_type(df: pd.core.frame.DataFrame) -> No
     plt.legend()
     plt.show()
 
-def visualize_churn_rate_versus_payment_type(df: pd.core.frame.DataFrame) -> None:
+def visualize_churn_rate_versus_tech_support(df: pd.core.frame.DataFrame) -> None:
     '''
         Display a histogram visualizing the distribution of customers
-        who have churned and those that haven't versus the payment
-        type.
+        who have churned and those that haven't versus tech support
 
         Parameters
         ----------
@@ -79,10 +82,24 @@ def visualize_churn_rate_versus_payment_type(df: pd.core.frame.DataFrame) -> Non
     churned = df[df.churn == 'Yes']
     not_churned = df[df.churn == 'No']
 
-    sns.histplot(data = not_churned.payment_type, label = 'Not Churned', color = 'green')
-    sns.histplot(data = churned.payment_type, label = 'Churned', color = 'red')
-    plt.title('Most customers that are churning use the electronic check payment method')
+    sns.histplot(data = not_churned.tech_support, label = 'Not Churned', color = 'green')
+    sns.histplot(data = churned.tech_support, label = 'Churned', color = 'red')
+    plt.title('Customers without tech support and higher monthly charges churn')
     plt.xticks(rotation = 30)
+    plt.legend()
+    plt.show()
+
+def visualize_churn_rate_versus_tenure(df: pd.core.frame.DataFrame) -> None:
+    '''
+
+    '''
+
+    churned = df[df.churn == 'Yes']
+    not_churned = df[df.churn == 'No']
+
+    sns.histplot(data = not_churned.tenure, label = 'Not Churned', color = 'green')
+    sns.histplot(data = churned.tenure, label = 'Churned', color = 'red')
+    plt.title('Most customers that are churning have low tenure')
     plt.legend()
     plt.show()
 
@@ -155,9 +172,9 @@ def perform_chi2_test_on_contract_type(df: pd.core.frame.DataFrame) -> None:
 
     chi2_test(df.churn, df.contract_type)
 
-def perform_chi2_test_on_payment_type(df: pd.core.frame.DataFrame) -> None:
+def perform_chi2_test_on_tech_support(df: pd.core.frame.DataFrame) -> None:
     '''
-        Conducts a chi2 test between the payment type and churn features
+        Conducts a chi2 test between the tech support and churn features
         of the dataframe. The results are printed to the console.
 
         Parameters
@@ -167,4 +184,4 @@ def perform_chi2_test_on_payment_type(df: pd.core.frame.DataFrame) -> None:
             Telco customer dataset.
     '''
 
-    chi2_test(df.churn, df.payment_type)
+    chi2_test(df.churn, df.tech_support)
