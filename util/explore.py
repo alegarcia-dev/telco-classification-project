@@ -41,8 +41,18 @@ def distribution_of_customer_churn(df: pd.core.frame.DataFrame) -> None:
             Telco customer dataset.
     '''
 
-    sns.histplot(df.churn)
-    plt.title('Customers that churn make up roughly a quarter of the customer population')
+    # sns.histplot(df.churn)
+    # plt.title('Customers that churn make up roughly a quarter of the customer population')
+    # plt.show()
+
+    data = [(df.churn.value_counts())[1], (df.churn.value_counts())[0]]
+    labels = ['Churned', 'Not Churned']
+    colors = sns.color_palette('Paired')
+    # explode = [0.3,0.02]
+    plt.pie(data, labels=labels,colors = colors, autopct = '%0.0f%%',
+            textprops = {'color': 'Black','fontsize':16})
+    figsize=(10,10)
+    plt.title(f"Customers that churn make up roughly a quarter of the customer population")
     plt.show()
 
 def visualize_churn_rate_versus_contract_type(df: pd.core.frame.DataFrame) -> None:
@@ -61,10 +71,9 @@ def visualize_churn_rate_versus_contract_type(df: pd.core.frame.DataFrame) -> No
     churned = df[df.churn == 'Yes']
     not_churned = df[df.churn == 'No']
 
-    sns.histplot(data = not_churned.contract_type, label = 'Not Churned', color = 'green')
-    sns.histplot(data = churned.contract_type, label = 'Churned', color = 'red')
+    sns.set_palette(sns.color_palette('icefire'))
+    sns.histplot(data = df, x = 'contract_type', hue = 'churn', multiple = 'stack')
     plt.title('Most customers that are churning are on the month-to-month contract')
-    plt.legend()
     plt.show()
 
 def visualize_churn_rate_versus_tech_support(df: pd.core.frame.DataFrame) -> None:
@@ -82,10 +91,9 @@ def visualize_churn_rate_versus_tech_support(df: pd.core.frame.DataFrame) -> Non
     churned = df[df.churn == 'Yes']
     not_churned = df[df.churn == 'No']
 
-    sns.histplot(data = not_churned.tech_support, label = 'Not Churned', color = 'green')
-    sns.histplot(data = churned.tech_support, label = 'Churned', color = 'red')
+    sns.set_palette(sns.color_palette('icefire'))
+    sns.histplot(data = df, x = 'tech_support', hue = 'churn', multiple = 'stack')
     plt.title('Customers without tech support and higher monthly charges churn')
-    plt.legend()
     plt.show()
 
 def visualize_churn_rate_versus_tenure(df: pd.core.frame.DataFrame) -> None:
@@ -96,10 +104,9 @@ def visualize_churn_rate_versus_tenure(df: pd.core.frame.DataFrame) -> None:
     churned = df[df.churn == 'Yes']
     not_churned = df[df.churn == 'No']
 
-    sns.histplot(data = not_churned.tenure, label = 'Not Churned', color = 'green')
-    sns.histplot(data = churned.tenure, label = 'Churned', color = 'red')
+    sns.set_palette(sns.color_palette('icefire'))
+    sns.histplot(data = df, x = 'tenure', hue = 'churn', multiple = 'stack')
     plt.title('Most customers that are churning have low tenure')
-    plt.legend()
     plt.show()
 
 def visualize_monthly_charges_versus_tenure(df: pd.core.frame.DataFrame) -> None:
