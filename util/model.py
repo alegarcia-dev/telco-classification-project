@@ -17,6 +17,9 @@
 #       create_models(df: pd.core.frame.DataFrame)
 #       visualize_performance_of_models(df)
 #       make_predictions_on_test(df)
+#       write_predictions_to_file(y, prob, pred, customers)
+#       reduced_percentage(original: float, reduction: float)
+#       visualize_test_performance()
 #
 ####################
 
