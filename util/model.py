@@ -21,6 +21,8 @@
 ####################
 
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
@@ -121,9 +123,7 @@ def split_into_X_and_y(df: pd.core.frame.DataFrame):
         'tenure',
         'contract_type_one_year',
         'contract_type_two_year',
-        'payment_type_credit_card_automatic',
-        'payment_type_electronic_check',
-        'payment_type_mailed_check'
+        'tech_support_yes'
     ]
     return df[features], df.churn
 
@@ -147,7 +147,7 @@ def create_models(df: pd.core.frame.DataFrame, random_seed = 24):
 
     X, y = split_into_X_and_y(df)
 
-    model_1 = DecisionTreeClassifier(max_depth = 5, random_state = random_seed)
+    model_1 = DecisionTreeClassifier(criterion = 'entropy', max_depth = 5, random_state = random_seed)
     model_1.fit(X, y)
 
     model_2 = RandomForestClassifier(max_depth = 5, random_state = random_seed)
@@ -242,7 +242,21 @@ def make_predictions_on_test(df: pd.core.frame.DataFrame, original_df: pd.core.f
 
 def write_predictions_to_file(y, prob, pred, customers):
     '''
-        Write predictions to predictions.csv
+        Write predictions to predictions.csv.
+
+        Parameters
+        ----------
+        y: Series
+            The true target variable values.
+
+        prob: Array
+            An array of the probabilities of each customer churning.
+
+        pred: Array
+            An array of the model's predictions.
+
+        customers: DataFrame
+            The unsplit Telco customers dataframe.
     '''
 
     predictions = pd.DataFrame(
@@ -292,3 +306,9 @@ def reduced_percentage(original: float, reduction: float):
     print('Percentage of customers in the test dataset that churned')
     print('with the 41% we identified not churning:')
     print(f'{original - original * reduction:.2%}')
+
+def visualize_test_performance():
+    colors = sns.color_palette('pastel')[0 : 2]
+    plt.pie([0.60, 0.40], labels = ['Identified', 'Not Identified'], colors = colors, autopct='%.0f%%')
+    plt.title(f'60% of Customers That Churned Identified')
+    plt.show()

@@ -217,7 +217,7 @@ The decision tree model was determined to be the best performing model. For more
 breakdown of the results refer to model.ipynb in the notebooks directory.
 
 Here I will provide my recommended course of action formulated with the help of the decision tree model breakdown:
-- Customers identified as likely to churn who have less than 17 months of tenure should be offered a reduced monthly rate to bring their monthly charges below 68 dollars until they reach 17 months of tenure. If their monthly bill is already below 68 dollars they can be offered an incentive to utilize a different form of payment.
-- Customers identified as likely to churn who have more than 17 months of tenure should be offered a discounted rate to reduce their monthly charges by a small percentage.
+- Customers identified as likely to churn who are on the month to month contract and have monthly charges exceeding 67 dollars should be offered an incentive to switch to a yearly contract or offered a discount on their monthly rate.
+- Customers identified as likely to churn who are not on the month to month contract should be offered a discount to reduce their monthly charges a small percentage.
 
 [Back to top](#reducing-customer-churn-at-telco)
