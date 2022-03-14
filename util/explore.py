@@ -85,7 +85,6 @@ def visualize_churn_rate_versus_tech_support(df: pd.core.frame.DataFrame) -> Non
     sns.histplot(data = not_churned.tech_support, label = 'Not Churned', color = 'green')
     sns.histplot(data = churned.tech_support, label = 'Churned', color = 'red')
     plt.title('Customers without tech support and higher monthly charges churn')
-    plt.xticks(rotation = 30)
     plt.legend()
     plt.show()
 
