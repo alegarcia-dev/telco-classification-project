@@ -92,9 +92,9 @@ def measure_model_performance(y_true: pd.core.series.Series, *y_pred, positive_l
     for index, predictions in enumerate(y_pred):
         scores.append({
             'model' : index if not labels else labels[index],
-            'accuracy' : accuracy_score(y_true, predictions),
-            'precision' : precision_score(y_true, predictions, pos_label = positive_label, zero_division = 0),
-            'recall' : recall_score(y_true, predictions, pos_label = positive_label, zero_division = 0)
+            'accuracy' : round(accuracy_score(y_true, predictions), 2),
+            'precision' : round(precision_score(y_true, predictions, pos_label = positive_label, zero_division = 0), 2),
+            'recall' : round(recall_score(y_true, predictions, pos_label = positive_label, zero_division = 0), 2)
         })
         
     df = pd.DataFrame(scores)
